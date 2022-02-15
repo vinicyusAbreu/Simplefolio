@@ -17,7 +17,7 @@ O projeto é composto em três partes:
 
 Veja abaixo um gif do projeto.</br>
 
-[![Image from Gyazo](https://i.gyazo.com/f3b46beafb80a410fbe4dd1cb62098c9.gif)](https://gyazo.com/f3b46beafb80a410fbe4dd1cb62098c9)
+[![Image from Gyazo](https://media.giphy.com/media/h8z8OtzkAMIjoDqWrN/giphy.gif)](https://gyazo.com/f3b46beafb80a410fbe4dd1cb62098c9)
 
 ## 🎯 Objetivo do projeto
 
