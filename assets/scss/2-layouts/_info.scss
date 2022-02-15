@@ -1,0 +1,207 @@
+@use "../1-base/variaveis";
+@use "../1-base/base-mixins";
+@use "layouts-mixins";
+
+.info {
+    width: 100%;
+    @include layouts-mixins.flex;
+    flex-wrap: nowrap;
+    gap: 35px;
+    margin-bottom: 40px;
+    @include base-mixins.device(s) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    &-skills {
+        height: 100%;
+        width: 40%;
+        @include base-mixins.device(s) {
+            flex: 1;
+        }
+    }
+    &-job {
+        height: 100%;
+        width: 60%;
+        @include base-mixins.device(m) {
+            max-width: 55%;
+        }
+        @include base-mixins.device(s) {
+            flex: 1;
+        }
+    }
+}
+
+.skills {
+    @include layouts-mixins.box;
+    width: 100%;
+    margin-bottom: 40px;
+    h2 {
+        text-transform: uppercase;
+        @include layouts-mixins.font(1.8rem, variaveis.$color-black, 22px, 700);
+        margin-bottom: 17px;
+    }
+    li {
+        @include layouts-mixins.flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        @include base-mixins.device(m) {
+            gap: 20px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        span {
+            @include layouts-mixins.font(1.6rem, variaveis.$color-black, 20px);
+
+            @include base-mixins.device(m) {
+                flex: 1;
+            }
+        }
+    }
+}
+
+.hobbies {
+    width: 100%;
+    @include layouts-mixins.box;
+    h2 {
+        @include layouts-mixins.font(2.4rem, variaveis.$color-black, 29px);
+        margin-bottom: 26px;
+    }
+    ul {
+        @include layouts-mixins.flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        @include base-mixins.device(s) {
+            justify-content: center;
+        }
+        li {
+            @include layouts-mixins.flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+
+            width: 380px;
+            &:not(:last-child) {
+                margin-bottom: 40px;
+            }
+
+            @for $i from 1 through 3 {
+                .bg-#{$i} {
+                    background-image: url("../img/bg-#{$i}.jpg");
+                    height: 140px;
+                    margin-bottom: 20px;
+                }
+            }
+            h3 {
+                @include layouts-mixins.font(1.8rem, variaveis.$color-dark, 22px, 600);
+                margin-bottom: 10px;
+            }
+            p {
+                @include layouts-mixins.font(1.6rem, variaveis.$color-gray, 20px);
+            }
+        }
+    }
+}
+
+.blog {
+    @include layouts-mixins.box;
+    margin-bottom: 40px;
+    & > p {
+        @include layouts-mixins.font(1.6rem, variaveis.$color-gray, 20px);
+        margin-bottom: 20px;
+    }
+    a {
+        @include layouts-mixins.font(1.6rem, variaveis.$color-blue, 20px);
+        transition: all 0.3s;
+        display: inline-block;
+        margin-top: 40px;
+
+        padding: 5px 0;
+
+        &:hover {
+            color: lighten(variaveis.$color-blue, 20%);
+        }
+    }
+}
+
+.blog-header {
+    @include layouts-mixins.flex;
+    flex-wrap: nowrap;
+    gap: 40px;
+    margin-bottom: 40px;
+    @include base-mixins.device(xs) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .blog-header-title {
+        p {
+            @include layouts-mixins.font(1.6rem, variaveis.$color-gray-light, 20px);
+            margin-bottom: 20px;
+        }
+        h2 {
+            @include layouts-mixins.font(2.4rem, variaveis.$color-dark, 29px);
+        }
+    }
+    .blog-header-bg {
+        background-image: url("../img/code.webp");
+        width: 396px;
+        height: 320px;
+        border-radius: 12px;
+    }
+}
+
+.experience {
+    @include layouts-mixins.box;
+    h2 {
+        @include layouts-mixins.font(2.4rem, variaveis.$color-black, 29px);
+        margin-bottom: 40px;
+    }
+
+    li {
+        @include layouts-mixins.flex;
+        flex-wrap: nowrap;
+        margin-bottom: 30px;
+        @include base-mixins.device(xs) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        gap: 22px;
+        .experience-bg-1,
+        .experience-bg-2 {
+            width: 120px;
+            height: 85px;
+        }
+        .experience-bg-1 {
+            background-image: url("../img/Adidas_Logo.svg");
+            background-size: contain;
+        }
+        .experience-bg-2 {
+            background-image: url("../img/h-m-logo.svg");
+        }
+    }
+}
+
+.container-experience {
+    width: 80%;
+    @include base-mixins.device(xs) {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        width: 100%;
+        text-align: center;
+    }
+    small {
+        display: block;
+        @include layouts-mixins.font(1.4rem, variaveis.$color-gray, 17px);
+        margin-bottom: 5px;
+    }
+    h3 {
+        @include layouts-mixins.font(1.6rem, variaveis.$color-dark, 20px, 600);
+        margin-bottom: 20px;
+    }
+    p {
+        @include layouts-mixins.font(1.6rem, variaveis.$color-gray, 20px);
+    }
+}

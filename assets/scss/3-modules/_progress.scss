@@ -1,0 +1,24 @@
+@use "../1-base/variaveis";
+@use "../1-base/base-mixins";
+
+.progress {
+    width: 236px;
+    height: 10px;
+    @include base-mixins.device(xs) {
+        width: 60%;
+    }
+}
+
+.progress-wrap {
+    background-color: variaveis.$color-gray-dark;
+    border-radius: 12px;
+    @include base-mixins.device(m) {
+        flex: 1;
+    }
+}
+
+.progress-bar {
+    background-color: variaveis.$color-blue;
+    border-radius: 12px;
+    height: 100%;
+}

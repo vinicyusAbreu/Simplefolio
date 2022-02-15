@@ -1,0 +1,91 @@
+@use "../1-base/variaveis";
+@use "../1-base/base-mixins";
+@use "layouts-mixins";
+
+header {
+    @include layouts-mixins.box;
+    @include layouts-mixins.flex;
+    min-height: 310px;
+    margin-bottom: 40px;
+    @include base-mixins.device(m) {
+        gap: 20px;
+    }
+    @include base-mixins.device(s) {
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .header-bg {
+        width: 271.86px;
+        height: 266.14px;
+        border-radius: 12px;
+        background-image: url("../img/profile.jpg");
+    }
+    .container-header {
+        align-items: flex-start;
+        max-width: 70%;
+        @include base-mixins.device(m) {
+            flex: 1;
+        }
+        @include base-mixins.device(s) {
+            max-width: 100%;
+        }
+
+        .box-info {
+            @include base-mixins.device(s) {
+                text-align: center;
+            }
+            p {
+                color: variaveis.$color-gray;
+                @include layouts-mixins.font(1.8rem, variaveis.$color-gray, 22px);
+                @include base-mixins.device(s) {
+                    @include layouts-mixins.font(1.6rem, variaveis.$color-gray, 18px);
+                }
+            }
+            p:first-child {
+                padding-bottom: 20px;
+            }
+        }
+    }
+}
+
+.container-header-flex {
+    @include layouts-mixins.flex;
+    width: 100%;
+    margin-bottom: 30px;
+    @include base-mixins.device(m) {
+        gap: 20px;
+    }
+    @include base-mixins.device(s) {
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+    }
+    .box-profile {
+        p {
+            &:first-child {
+                @include layouts-mixins.font(24px, 600, variaveis.$color-black, 29px);
+                @include base-mixins.device(s) {
+                    @include layouts-mixins.font(1.8, variaveis.$color-black, 29px);
+                }
+            }
+            &:last-child {
+                @include layouts-mixins.font(1.8rem, variaveis.$color-gray, 22px);
+                @include base-mixins.device(s) {
+                    @include layouts-mixins.font(1.6, variaveis.$color-gray, 22px);
+                }
+            }
+        }
+    }
+    .box-profile-2 {
+        p {
+            @include layouts-mixins.font(1.8rem, variaveis.$color-black, 25px);
+            @include layouts-mixins.flex;
+            justify-content: center;
+            gap: 18px;
+            @include base-mixins.device(s) {
+                @include layouts-mixins.font(1.6rem, variaveis.$color-black, 25px);
+            }
+        }
+    }
+}
